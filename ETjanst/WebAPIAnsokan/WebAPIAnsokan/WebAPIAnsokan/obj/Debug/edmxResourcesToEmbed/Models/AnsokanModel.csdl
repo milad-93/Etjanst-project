@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AnsokandatabasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ansokan">
+    <Key>
+      <PropertyRef Name="Elevpersonnummer" />
+    </Key>
+    <Property Name="Elevpersonnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ElevFornamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ElevEfternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Skola" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SkolArskurs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ElevFolkbokforingsadress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ElevPostnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ElevPostadress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fritidshem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Skoladress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SkolFritidshem" Type="Boolean" Nullable="false" />
+    <Property Name="SkolPostnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SkolPostadress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareEttNamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareEttTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareEttAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareEttPostnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareEttEpost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareEttPostort" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareTwoNamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareTwoTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareTwoAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareTwoPostnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareTwoEpost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VardnadshavareTwoPostort" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Period" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VinterSkolskjuts" Type="Boolean" Nullable="false" />
+    <Property Name="AvstandFranSkola" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TrafikfarligSkolvag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VaxelVisboende" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FunktionsVariation" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SarkildaOmstandigheter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MotiveraAnsokan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Vardnadshavarepersonnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdHandlaggare" Type="Int32" />
+    <NavigationProperty Name="Handlaggare" Relationship="Self.FK_Handlaggare_ToTable" FromRole="Ansokan" ToRole="Handlaggare" />
+    <NavigationProperty Name="Vardnadshavare" Relationship="Self.FK_Vardnadshavare_ToTable" FromRole="Ansokan" ToRole="Vardnadshavare" />
+    <Property Name="DatumAvHandlaggare" Type="DateTime" Precision="3" />
+    <Property Name="DatumAvVardnadshavare" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BedomningAvHandlaggare" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="StatusAvHandlaggare" Type="Boolean" />
+    <Property Name="Fardig" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Handlaggare">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Anvandarnamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Losenord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fornamn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Efternamn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Ansokan" Relationship="Self.FK_Handlaggare_ToTable" FromRole="Handlaggare" ToRole="Ansokan" />
+  </EntityType>
+  <EntityType Name="Vardnadshavare">
+    <Key>
+      <PropertyRef Name="Vardnadshavarepersonnummer" />
+    </Key>
+    <Property Name="Vardnadshavarepersonnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fornamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Efternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Anvandarnamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Losenord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Andranamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ansokan" Relationship="Self.FK_Vardnadshavare_ToTable" FromRole="Vardnadshavare" ToRole="Ansokan" />
+  </EntityType>
+  <Association Name="FK_Handlaggare_ToTable">
+    <End Role="Handlaggare" Type="Self.Handlaggare" Multiplicity="0..1" />
+    <End Role="Ansokan" Type="Self.Ansokan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Handlaggare">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ansokan">
+        <PropertyRef Name="IdHandlaggare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vardnadshavare_ToTable">
+    <End Role="Vardnadshavare" Type="Self.Vardnadshavare" Multiplicity="1" />
+    <End Role="Ansokan" Type="Self.Ansokan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vardnadshavare">
+        <PropertyRef Name="Vardnadshavarepersonnummer" />
+      </Principal>
+      <Dependent Role="Ansokan">
+        <PropertyRef Name="Vardnadshavarepersonnummer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AnsokanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ansokan" EntityType="Self.Ansokan" />
+    <EntitySet Name="Handlaggare" EntityType="Self.Handlaggare" />
+    <EntitySet Name="Vardnadshavare" EntityType="Self.Vardnadshavare" />
+    <AssociationSet Name="FK_Handlaggare_ToTable" Association="Self.FK_Handlaggare_ToTable">
+      <End Role="Handlaggare" EntitySet="Handlaggare" />
+      <End Role="Ansokan" EntitySet="Ansokan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vardnadshavare_ToTable" Association="Self.FK_Vardnadshavare_ToTable">
+      <End Role="Vardnadshavare" EntitySet="Vardnadshavare" />
+      <End Role="Ansokan" EntitySet="Ansokan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,337 @@
+/*+---------------------------------------------------------------------+
+  | style: GBStad                                                       |
+  | com: sass --watch assets/sass/main.scss assets/css/main.css         |
+  | by: Gabriel Wrede                                                   |
+  +---------------------------------------------------------------------+*/
+
+// GET Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Göteborg stad sets
+@import "colors.scss";
+@import "typography.scss";
+
+// Vårat
+//Rester dåliga värden
+html, body{
+  font-family: $--type-default;
+  margin: 0;
+  padding: 0;
+}
+//Nästan alla lådor har under lina
+.box{
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background-color: #fff;
+}
+//Standrad för alla länkar
+a{
+  font-family: $--type-default;
+  color: $--gbg-blue;
+  transition: .1s outline ease;
+  &:hover{
+    text-decoration: underline;
+  }
+  &:focus{
+      outline: 2px dotted #333;
+  }
+}
+
+button{
+  &:focus{
+    outline: 2px dotted #333 !important;
+  }
+}
+.long-bar{
+  width: -webkit-fill-available !important;
+}
+//för sök fält
+.merge-search{
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0px 0px 0px 0px;
+  //transition: .1s border-color ease;
+  input{
+    margin-right: 0 !important;
+    border: none;
+    border-radius: 0px 0px 0px 0px;
+    &:focus{
+      box-shadow: none !important;
+    }
+  }
+  button{
+    margin-right: 0;
+    svg{
+      margin: auto;
+      margin-top: -3px;
+      height: 18px;
+      width: 18px;
+      fill: $--gbg-blue;
+    }
+    &:focus{
+      box-shadow: none !important;
+    }
+  }
+  &:hover{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: .1s border-color ease;
+  }
+  &:focus{
+    border: 1px solid $--gbg-blue;
+    transition: .1s border-color ease;  
+  }
+  &:focus-within{
+    border: 1px solid $--gbg-blue;
+    transition: .1s border-color ease;  
+  }
+}
+// bread crups
+.breadcrumb-fead{
+  
+  padding: auto;
+  svg{
+    //@extend .icon;
+    margin-top: -3px;
+    width: 16px;
+    height: 16px;
+    fill: $--gbg-blue;
+  }
+}
+// nav bar för loga
+.gb-nav{
+  @extend .box;
+  padding: 0;
+}
+.breadcrumbs-nav{
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.under-nav{
+  ul{
+    .nav-item{
+      a{
+        padding: 0rem 0rem;
+      }
+      span{
+        padding: 0rem 0.4rem;
+      }
+      strong{
+        padding: 0rem 0rem;
+        font-weight: 600;
+        color: #333;
+      }
+    }
+  }
+}
+.breadcrumb-container{
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+//För grå ruta i topen
+.top{
+  @extend .box;
+  background-color: $--gbg-grey-top;
+  font: $--type-sz2;
+  text-decoration: underline;
+  .left{
+    text-align: left;
+  }
+  .right{
+    text-align: right;
+  }
+  div{
+    p{
+      margin: 0;
+      padding: 7px 18px 7px 0;
+    }
+  }
+}
+//För start icon
+.icon{
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  margin-right: 6px;
+  fill: $--gbg-blue;
+}
+//För footer
+footer{
+  background-color: $--gbg-grey-bottom;
+  padding: 3.2rem 0 1.6rem;
+  margin: 0 -1rem;
+  margin-top: 24px;
+}
+h1{
+  font:  $--type-sz-h1;
+  color: #333;
+}
+
+.btn-gbg-primary{
+  transition: all 100ms ease;
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: $--gbg-blue-btn;
+  border-radius: 0px 0px 0px 0px;
+  &:focus{
+    box-shadow: none !important;
+    color: #fff;
+    background-color: $--gbg-blue-btn-hover;
+    outline: 2px dotted #333 !important;
+  }
+  &:hover{
+    box-shadow: none !important;
+    color: #fff;
+    background-color: $--gbg-blue-btn-hover;
+  }
+  p{
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 18px;
+    line-height: 1.48;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+  h3{
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 700;
+    font-stretch: normal;
+    font-size: 22px;
+    line-height: 1.48;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+}
+h1{
+  font: $--type-sz-h1-half;
+}
+.header-img{
+  width: 111px;
+  height: 37px;
+}
+.container-dymic{
+  @extend .container-fluid;
+}
+.footer-img{
+  width: 140px;
+  height: 46.578px;
+}
+.spalt{
+  h3{
+    margin: 24px 0 6px;
+    font: $--type-sz-h3-half;
+  }
+  p{
+    margin-bottom: 24px;
+    font: $--type-sz-p-half;
+  }
+  .btn{
+    width: -webkit-fill-available;
+    margin-bottom: 2rem; 
+  }
+}
+.btn-flat{
+  margin: 0 !important;
+}
+.form-head{
+  border-left: 6px solid $--gbg-blue;
+  padding-left: 24px;
+  margin-bottom: 0 !important;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-weight: 400 !important; 
+}
+.main-form{
+  .form-group{
+    label{
+      font-weight: 600 !important; 
+      text-transform: capitalize;
+    }
+    input{
+      border-radius: 0;
+      border: 1px solid #959595;
+      padding: 0.4rem 0.8rem;
+      transition: all 100ms;
+      &:focus{
+        outline: 1px solid #0076bc;
+        outline-offset: 0;
+        border-color: #0076bc;
+        box-shadow: none;
+      }
+      &:hover{
+        outline: 1px solid #959595;
+      }
+    }
+    textarea{
+      border-radius: 0;
+      border: 1px solid #959595;
+      padding: 0.4rem 0.8rem;
+      transition: all 100ms;
+      &:focus{
+        outline: 1px solid #0076bc;
+        outline-offset: 0;
+        border-color: #0076bc;
+        box-shadow: none;
+      }
+      &:hover{
+        outline: 1px solid #959595;
+      }
+    }
+  }
+  button{
+    @extend .btn;
+    @extend .btn-gbg-primary;
+  }
+  border-left: 2px solid #ccc;
+  padding-left: 24px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@include media-breakpoint-up(md) {
+  h1{
+    font: $--type-sz-h1;
+  }
+  .header-img{
+    width: 168px;
+    height: 56px;
+  }
+  .gb-nav{
+    @extend .box;
+    padding: 22px 0;
+  }
+  .container-dymic{
+    margin: 0;
+    padding: 0;
+  }
+  footer{
+    background-color: $--gbg-grey-bottom;
+    padding: 3.2rem 0 1.6rem;
+  }
+  .spalt{
+    h3{
+      margin: 36px 0 6px;
+      font: $--type-sz-h3;
+    }
+    p{
+      margin-bottom: 24px;
+      font: $--type-sz-p;
+    }
+    .btn{
+      width: inherit;
+    }
+  }
+}
+#output-error{
+  color: red;
+}
+
+

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AnsokandatabasModelStoreContainer" CdmEntityContainer="AnsokanEntities">
+    <EntitySetMapping Name="Ansokan">
+      <EntityTypeMapping TypeName="AnsokandatabasModel.Ansokan">
+        <MappingFragment StoreEntitySet="Ansokan">
+          <ScalarProperty Name="Fardig" ColumnName="Fardig" />
+          <ScalarProperty Name="StatusAvHandlaggare" ColumnName="StatusAvHandlaggare" />
+          <ScalarProperty Name="BedomningAvHandlaggare" ColumnName="BedomningAvHandlaggare" />
+          <ScalarProperty Name="DatumAvVardnadshavare" ColumnName="DatumAvVardnadshavare" />
+          <ScalarProperty Name="DatumAvHandlaggare" ColumnName="DatumAvHandlaggare" />
+          <ScalarProperty Name="Elevpersonnummer" ColumnName="Elevpersonnummer" />
+          <ScalarProperty Name="ElevFornamn" ColumnName="ElevFornamn" />
+          <ScalarProperty Name="ElevEfternamn" ColumnName="ElevEfternamn" />
+          <ScalarProperty Name="Skola" ColumnName="Skola" />
+          <ScalarProperty Name="SkolArskurs" ColumnName="SkolArskurs" />
+          <ScalarProperty Name="ElevFolkbokforingsadress" ColumnName="ElevFolkbokforingsadress" />
+          <ScalarProperty Name="ElevPostnummer" ColumnName="ElevPostnummer" />
+          <ScalarProperty Name="ElevPostadress" ColumnName="ElevPostadress" />
+          <ScalarProperty Name="Fritidshem" ColumnName="Fritidshem" />
+          <ScalarProperty Name="Skoladress" ColumnName="Skoladress" />
+          <ScalarProperty Name="SkolFritidshem" ColumnName="SkolFritidshem" />
+          <ScalarProperty Name="SkolPostnummer" ColumnName="SkolPostnummer" />
+          <ScalarProperty Name="SkolPostadress" ColumnName="SkolPostadress" />
+          <ScalarProperty Name="VardnadshavareEttNamn" ColumnName="VardnadshavareEttNamn" />
+          <ScalarProperty Name="VardnadshavareEttTelefon" ColumnName="VardnadshavareEttTelefon" />
+          <ScalarProperty Name="VardnadshavareEttAdress" ColumnName="VardnadshavareEttAdress" />
+          <ScalarProperty Name="VardnadshavareEttPostnummer" ColumnName="VardnadshavareEttPostnummer" />
+          <ScalarProperty Name="VardnadshavareEttEpost" ColumnName="VardnadshavareEttEpost" />
+          <ScalarProperty Name="VardnadshavareEttPostort" ColumnName="VardnadshavareEttPostort" />
+          <ScalarProperty Name="VardnadshavareTwoNamn" ColumnName="VardnadshavareTwoNamn" />
+          <ScalarProperty Name="VardnadshavareTwoTelefon" ColumnName="VardnadshavareTwoTelefon" />
+          <ScalarProperty Name="VardnadshavareTwoAdress" ColumnName="VardnadshavareTwoAdress" />
+          <ScalarProperty Name="VardnadshavareTwoPostnummer" ColumnName="VardnadshavareTwoPostnummer" />
+          <ScalarProperty Name="VardnadshavareTwoEpost" ColumnName="VardnadshavareTwoEpost" />
+          <ScalarProperty Name="VardnadshavareTwoPostort" ColumnName="VardnadshavareTwoPostort" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="VinterSkolskjuts" ColumnName="VinterSkolskjuts" />
+          <ScalarProperty Name="AvstandFranSkola" ColumnName="AvstandFranSkola" />
+          <ScalarProperty Name="TrafikfarligSkolvag" ColumnName="TrafikfarligSkolvag" />
+          <ScalarProperty Name="VaxelVisboende" ColumnName="VaxelVisboende" />
+          <ScalarProperty Name="FunktionsVariation" ColumnName="FunktionsVariation" />
+          <ScalarProperty Name="SarkildaOmstandigheter" ColumnName="SarkildaOmstandigheter" />
+          <ScalarProperty Name="MotiveraAnsokan" ColumnName="MotiveraAnsokan" />
+          <ScalarProperty Name="Vardnadshavarepersonnummer" ColumnName="Vardnadshavarepersonnummer" />
+          <ScalarProperty Name="IdHandlaggare" ColumnName="IdHandlaggare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Handlaggare">
+      <EntityTypeMapping TypeName="AnsokandatabasModel.Handlaggare">
+        <MappingFragment StoreEntitySet="Handlaggare">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Anvandarnamn" ColumnName="Anvandarnamn" />
+          <ScalarProperty Name="Losenord" ColumnName="Losenord" />
+          <ScalarProperty Name="Fornamn" ColumnName="Fornamn" />
+          <ScalarProperty Name="Efternamn" ColumnName="Efternamn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vardnadshavare">
+      <EntityTypeMapping TypeName="AnsokandatabasModel.Vardnadshavare">
+        <MappingFragment StoreEntitySet="Vardnadshavare">
+          <ScalarProperty Name="Vardnadshavarepersonnummer" ColumnName="Vardnadshavarepersonnummer" />
+          <ScalarProperty Name="Fornamn" ColumnName="Fornamn" />
+          <ScalarProperty Name="Efternamn" ColumnName="Efternamn" />
+          <ScalarProperty Name="Anvandarnamn" ColumnName="Anvandarnamn" />
+          <ScalarProperty Name="Losenord" ColumnName="Losenord" />
+          <ScalarProperty Name="Andranamn" ColumnName="Andranamn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

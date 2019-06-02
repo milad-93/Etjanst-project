@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AnsokandatabasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ansokan">
+    <Key>
+      <PropertyRef Name="Elevpersonnummer" />
+    </Key>
+    <Property Name="Elevpersonnummer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ElevFornamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ElevEfternamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Skola" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SkolArskurs" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ElevFolkbokforingsadress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ElevPostnummer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ElevPostadress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fritidshem" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Skoladress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SkolFritidshem" Type="bit" Nullable="false" />
+    <Property Name="SkolPostnummer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SkolPostadress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareEttNamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareEttTelefon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareEttAdress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareEttPostnummer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareEttEpost" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareEttPostort" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareTwoNamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareTwoTelefon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareTwoAdress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareTwoPostnummer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareTwoEpost" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VardnadshavareTwoPostort" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Period" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VinterSkolskjuts" Type="bit" Nullable="false" />
+    <Property Name="AvstandFranSkola" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TrafikfarligSkolvag" Type="varchar" MaxLength="50" />
+    <Property Name="VaxelVisboende" Type="varchar" MaxLength="50" />
+    <Property Name="FunktionsVariation" Type="varchar" MaxLength="250" />
+    <Property Name="SarkildaOmstandigheter" Type="varchar" MaxLength="50" />
+    <Property Name="MotiveraAnsokan" Type="varchar" MaxLength="50" />
+    <Property Name="Vardnadshavarepersonnummer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdHandlaggare" Type="int" />
+    <Property Name="DatumAvHandlaggare" Type="datetime" />
+    <Property Name="DatumAvVardnadshavare" Type="datetime" Nullable="false" />
+    <Property Name="BedomningAvHandlaggare" Type="varchar" MaxLength="250" />
+    <Property Name="StatusAvHandlaggare" Type="bit" />
+    <Property Name="Fardig" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Handlaggare">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anvandarnamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Losenord" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fornamn" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Efternamn" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vardnadshavare">
+    <Key>
+      <PropertyRef Name="Vardnadshavarepersonnummer" />
+    </Key>
+    <Property Name="Vardnadshavarepersonnummer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fornamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Efternamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Anvandarnamn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Losenord" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Andranamn" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Handlaggare_ToTable">
+    <End Role="Handlaggare" Type="Self.Handlaggare" Multiplicity="0..1" />
+    <End Role="Ansokan" Type="Self.Ansokan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Handlaggare">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ansokan">
+        <PropertyRef Name="IdHandlaggare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vardnadshavare_ToTable">
+    <End Role="Vardnadshavare" Type="Self.Vardnadshavare" Multiplicity="1" />
+    <End Role="Ansokan" Type="Self.Ansokan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vardnadshavare">
+        <PropertyRef Name="Vardnadshavarepersonnummer" />
+      </Principal>
+      <Dependent Role="Ansokan">
+        <PropertyRef Name="Vardnadshavarepersonnummer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AnsokandatabasModelStoreContainer">
+    <EntitySet Name="Ansokan" EntityType="Self.Ansokan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Handlaggare" EntityType="Self.Handlaggare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vardnadshavare" EntityType="Self.Vardnadshavare" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Handlaggare_ToTable" Association="Self.FK_Handlaggare_ToTable">
+      <End Role="Handlaggare" EntitySet="Handlaggare" />
+      <End Role="Ansokan" EntitySet="Ansokan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vardnadshavare_ToTable" Association="Self.FK_Vardnadshavare_ToTable">
+      <End Role="Vardnadshavare" EntitySet="Vardnadshavare" />
+      <End Role="Ansokan" EntitySet="Ansokan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
